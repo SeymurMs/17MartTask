@@ -6,21 +6,39 @@ namespace _17MartTask
     {
         static void Main(string[] args)
         {
-                Group group=new Group();
+            string no;
+            do
+            {
+                Console.WriteLine("Sayi daxil edin :");
+                no = Console.ReadLine();    
+            } while (!CheckUpper(no));
+            string str;
+            int studentLimit;
 
-            group.No = "AP2032";
-            group.StudentLimit = 18;
-            Console.WriteLine(group.No);
-            Console.WriteLine(group.StudentLimit);
+            do
+            {
+                Console.WriteLine("Telebe sayi daxil edin ");
+                str = Console.ReadLine();
+
+            } while (!int.TryParse(str ,out studentLimit) &&  studentLimit <0);
+                
+            Group group = new Group(no, studentLimit);
+
+            
 
 
+        }
+        static bool CheckUpper(string name)
+        {
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                if (char.IsUpper(name[0]) && char.IsUpper(name[1]) && char.IsDigit(name[2]) && char.IsDigit(name[3]) && char.IsDigit(name[4]))
+                {
+                    return true;
+                }
 
-
-
-
-
-
-
+            }
+            return false;
         }
     }
 }

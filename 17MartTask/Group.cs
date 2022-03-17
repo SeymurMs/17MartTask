@@ -6,6 +6,11 @@ namespace _17MartTask
 {
     class Group
     {
+        public Group(string no,int stidentlimit)
+        {
+            this.No = no;
+            this.StudentLimit = stidentlimit;
+        }
         private string _no;
         private int _studentLimit;
 
@@ -46,7 +51,7 @@ namespace _17MartTask
         }
         public string GetInfo()
         {
-            return $"No: {this.No} - Name: {this.StudentLimit}";
+            return $"No: {this._no} - Name: {this._studentLimit}";
 
 
 
